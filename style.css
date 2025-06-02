@@ -2,6 +2,10 @@
     font-family: "Courier New";
 }
 
+header {
+    background-color: black;
+}
+
 footer {
     background-color: #afd5e5;
 }
@@ -39,4 +43,15 @@ nav {
 a#navegacion {
     color: white;
 
+}
+
+p.servicios {
+    display: grid;
+}
+
+span {
+    background-color: green;
+    padding: 30px;
+    width: 100px;
+    height: 100px;
 }
