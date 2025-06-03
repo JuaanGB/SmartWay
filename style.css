@@ -60,13 +60,9 @@ header {
     padding: 0px 10px;
 }
 
-.contenedor-tarjetas div p, .contenedor-tarjetas div h3 {
-    text-align: center;
-    grid-template-columns: auto auto auto;
-}
-
 .titulo-tarjeta {
     border-style: none none dashed none;
+    text-align: center;
     border-width: 2px;
 }
 
@@ -85,6 +81,15 @@ header {
 
 .tarjeta4 {
     grid-column: 1 / span 3;
+}
+
+@media only screen and (max-width: 600px) {
+    .contenedor-tarjetas {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    
 }
 
 /* Reviews */
