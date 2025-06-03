@@ -1,13 +1,6 @@
+/* Tipografía */
 * {
     font-family: "Courier New";
-}
-
-header {
-    background-color: black;
-}
-
-footer {
-    background-color: #afd5e5;
 }
 
 h1 {
@@ -27,40 +20,58 @@ p {
     text-align: justify;
 }
 
-p#contacto {
-    font-size: 14px;
-    text-align: center;
-}
-
 button {
     font-size: 16px;
 }
 
-nav {
-    background-color: #5799b3;
+/* Header */
+header {
+    background-color: black;
 }
 
-a#navegacion {
+#header{
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+
+.logo-web {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+
+.navegacion {
     color: white;
+    text-decoration: none;
 
 }
 
-p.servicios {
-    display: grid;
+#nombre-web {
+    font-size: 20px;
+    background-color: black;
+    color: white;
 }
 
-.tarjetas {
+/* Sección de tarjetas */
+.contenedor-tarjetas {
     display: grid;
     row-gap: 10px;
     column-gap: 10px;
 }
 
-.tarjetas div {
+.contenedor-tarjetas div {
     background-color: #c9d6ff;
     padding: 0px 10px;
 }
 
-.tarjetas div p, .tarjetas div h3 {
+.contenedor-tarjetas div p, .contenedor-tarjetas div h3 {
     text-align: center;
     grid-template-columns: auto auto auto;
 }
@@ -80,4 +91,44 @@ p.servicios {
 
 .tarjeta4 {
     grid-column: 1 / span 3;
+}
+
+/* Reviews */
+.contenedor-reviews {
+    display: flex;
+    column-gap: 10px;
+}
+
+.review {
+    background-color: #c9d6ff;
+    padding: 15px;
+}
+
+.review-autor {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.review-texto {
+    background-color: whitesmoke; /* Tendría que estar dentro de un div para que no sea solo el fondo del texto*/
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #afd5e5;
+}
+
+#contacto {
+    font-size: 14px;
+    text-align: center;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    column-gap: 10px;
 }

@@ -6,12 +6,18 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <header>
-        <img src="images/icon.png" style="width: 64px; height: 64px;">
-        <nav>
-            <a id="navegacion" href="index.html#quienes-somos">Quiénes somos</a>
-            <a id="navegacion" href="index.html#servicios-ofrecidos">Servicios ofrecidos</a>
-            <a id="navegacion" href="index.html#opiniones">Opiniones</a>
-        </nav>
+        <div id="header">
+            <div class="logo-web">
+                <img src="images/icon.png" style="width: 64px; height: 64px;">
+                <h1 id="nombre-web">CyberPulse Labs</h1>
+            </div>
+            <div class="nav">
+                <a class="navegacion" href="index.html#quienes-somos">Quiénes somos</a>
+                <a class="navegacion" href="index.html#servicios-ofrecidos">Servicios ofrecidos</a>
+                <a class="navegacion" href="index.html#opiniones">Opiniones</a>
+            </div>
+            
+        </div>
     </header>
     <main>
         <h1>CyberPulse Labs</h1>
@@ -30,7 +36,7 @@
         <section>
             <h2 id="servicios-ofrecidos">Servicios ofrecidos</h2>
 
-            <div class="tarjetas">
+            <div class="contenedor-tarjetas">
                 <div class="tarjeta1">
                     <h3>Monitoreo</h3>
                     <p>Seguimiento en tiempo real de solicitudes entrantes a tu sistema.</p>
@@ -55,8 +61,26 @@
         </section>
         <section>
             <h2 id="opiniones">Opiniones de nuestros clientes</h2>
-            <p>Pepito: <q>........</q></p>
-            <p>Juanito: <q>........</q></p>
+            <div class="contenedor-reviews">
+                <div class="review">
+                    <p class="review-autor">Laura Cañada - Directora de Seguridad TI en NovaBank</p>
+                    <div class="review-texto">
+                        <q>CyberPulse Labs transformó por completo nuestra estrategia de ciberseguridad. Detectaron vulnerabilidades que ni nuestros equipos internos conocían. Ahora dormimos tranquilos.</q>
+                    </div> 
+                </div>
+                <div class="review">
+                    <p class="review-autor">María García - Fundadora de HealthSecure</p>
+                    <div class="review-texto">
+                        <q>Gracias a CyberPulse Labs, nuestros servidores ahora están blindados. Lo que más valoramos es su atención personalizada y rápida respuesta.</q>
+                    </div>
+                    </div>
+                <div class="review">
+                    <p class="review-autor">Iván David - CTO de AeroNet</p>
+                    <div class="review-texto">
+                        <q>Me sorprendió su enfoque técnico y humano. No solo entregaron resultados, sino que nos educaron sobre cómo prevenir futuras amenazas.</q>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -65,8 +89,14 @@
             rrhh@cyberpulse-labs.com
         </a></p>
         <p id="contacto"><u>Teléfono:</u> 123456789</p>
-        <a href="https://www.linkedin.com">
-            <img src="images/LinkedIn.png" style="width: 64px; height: 64px;" >
-        </a>
+
+        <div class="redes-sociales">
+            <a href="https://www.linkedin.com">
+                <img src="images/LinkedIn.png" style="width: 64px; height: 64px;" >
+            </a>
+            <a href="https://www.facebook.com">
+                <img src="images/facebook.png" style="width: 64px; height: 64px;" >
+            </a>
+        </div>        
     </footer>
 </html>
