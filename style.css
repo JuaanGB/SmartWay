@@ -49,26 +49,35 @@ p.servicios {
     display: grid;
 }
 
-span {
-    background-color: green;
-    padding: 30px;
-    width: 100px;
-    height: 100px;
-}
-
 .tarjetas {
-    width: 100%;
-    overflow: auto;
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
 }
 
 .tarjetas div {
-    background-color: lightblue;
-    width: 30%;
-    float: left;
-    margin: 0px 10px;
+    background-color: #c9d6ff;
     padding: 0px 10px;
 }
 
 .tarjetas div p, .tarjetas div h3 {
     text-align: center;
+    grid-template-columns: auto auto auto;
+}
+
+.tarjeta1 {
+    grid-column: 1 / span 1;
+}
+
+.tarjeta2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.tarjeta3 {
+    grid-column: 3 / span 1;
+}
+
+.tarjeta4 {
+    grid-column: 1 / span 3;
 }
