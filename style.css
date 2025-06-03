@@ -31,26 +31,15 @@ header {
 
 #header{
     display: flex;
+    width: 100%;
     align-items: center;
-    align-content: space-between;
-}
-
-.logo-web {
-    display: flex;
-    align-items: center;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    column-gap: 10px;
+    align-content: space-between
 }
 
 .navegacion {
     color: white;
     text-decoration: none;
-
+    margin: 0px 10px;
 }
 
 #nombre-web {
@@ -74,6 +63,11 @@ header {
 .contenedor-tarjetas div p, .contenedor-tarjetas div h3 {
     text-align: center;
     grid-template-columns: auto auto auto;
+}
+
+.titulo-tarjeta {
+    border-style: none none dashed none;
+    border-width: 2px;
 }
 
 .tarjeta1 {
@@ -110,7 +104,7 @@ header {
 }
 
 .review-texto {
-    background-color: whitesmoke; /* Tendría que estar dentro de un div para que no sea solo el fondo del texto*/
+    background-color: whitesmoke;
     border-style: solid;
     border-width: 2px;
     padding: 5px;
