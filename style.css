@@ -55,3 +55,20 @@ span {
     width: 100px;
     height: 100px;
 }
+
+.tarjetas {
+    width: 100%;
+    overflow: auto;
+}
+
+.tarjetas div {
+    background-color: lightblue;
+    width: 30%;
+    float: left;
+    margin: 0px 10px;
+    padding: 0px 10px;
+}
+
+.tarjetas div p, .tarjetas div h3 {
+    text-align: center;
+}
