@@ -14,14 +14,28 @@ h2 {
     background-color: #afd5e5;
     text-align: center;
     padding: 5px;
+    margin: 15px 0px;
 }
 
 p {
     text-align: justify;
 }
 
+.dark p.cambio-color { /* Este cambia porque su padre (body) obtiene la clase dark */
+    color: white;
+}
+
 button {
     font-size: 16px;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+body.dark {
+    background-color: rgb(57, 57, 57);
 }
 
 /* Header */
@@ -37,19 +51,7 @@ header {
     display: flex;
 }
 
-
-@media only screen and (max-width: 600px) {
-    header {
-        gap: 10px;
-        flex-direction: column;
-    }
-    #nav {
-        flex-direction: column;
-        margin-left: 0;
-    }
-}
-
-#nav {
+nav {
     display: flex;
     align-content: flex-end;
     align-items: center;
@@ -62,10 +64,15 @@ header {
     color: white;
     text-decoration: none;
     margin: 5px 10px;
+    display: block;
 }
 
 .navegacion:hover {
     text-decoration: underline;
+}
+
+#selector-nav {
+    display: none;
 }
 
 #nombre-web {
@@ -79,6 +86,7 @@ header {
     display: grid;
     row-gap: 10px;
     column-gap: 10px;
+    margin: 10px;
 }
 
 .contenedor-tarjetas div {
@@ -110,24 +118,17 @@ header {
     grid-column: 1 / span 3;
 }
 
-@media only screen and (max-width: 600px) {
-    .contenedor-tarjetas {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-    }
-    
-}
-
 /* Reviews */
 .contenedor-reviews {
     display: flex;
     column-gap: 10px;
+    margin: 10px;
 }
 
 .review {
     background-color: #c9d6ff;
     padding: 15px;
+    align-items: center;
 }
 
 .review-autor {
@@ -140,15 +141,7 @@ header {
     border-style: solid;
     border-width: 2px;
     padding: 5px;
-}
-
-@media only screen and (max-width: 600px) {
-    .contenedor-reviews {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-    }
-    
+    box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.2)
 }
 
 /* Footer */
@@ -166,4 +159,35 @@ footer {
     flex-direction: row-reverse;
     justify-content: center;
     column-gap: 10px;
+}
+
+/* Media queries: Al final porque CSS funciona en cascada */
+@media only screen and (max-width: 800px) {
+    header {
+        gap: 10px;
+        flex-direction: column;
+    }
+    nav {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .contenedor-tarjetas {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .contenedor-reviews {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    #selector-nav {
+        display: block;
+    }
+    .navegacion {
+        display: none;
+    }
+    .nav-visible.navegacion {
+        display: block;
+    }
 }
