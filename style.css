@@ -52,6 +52,7 @@ header {
 #nav {
     display: flex;
     align-content: flex-end;
+    align-items: center;
     text-align: center;
     margin-left: auto;
     margin-right: 10px;

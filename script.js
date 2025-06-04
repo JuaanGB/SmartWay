@@ -1,3 +1,6 @@
+// 0: claro, 1: oscuro
+var modo = 0;
+
 function tarjetahover(event) {
     var ps = event.target.getElementsByTagName("p");
     var p = ps[0];
@@ -24,5 +27,16 @@ function anadirnuevo(event) {
 
         let div = event.target.getElementsByTagName("div")[0];
         div.remove();
+    }
+}
+
+function cambiarTema(event) {
+    if (event.type == "click") {
+        modo = !modo;
+        if (modo == 0) { // Claro
+            event.target.setAttribute("src", "images/modo-dia.png");
+        } else { // Oscuro
+            event.target.setAttribute("src", "images/modo-noche.png");
+        }
     }
 }
