@@ -4,15 +4,19 @@
         <title>CyberPulse Labs</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <header>
-        <div id="header">
+        <div id="logo-web">
             <img src="images/icon.png" style="width: 64px; height: 64px;">
             <h1 id="nombre-web">CyberPulse Labs</h1>
+        </div>
+        <div id="nav">
             <a class="navegacion" href="index.html#quienes-somos">Quiénes somos</a>
             <a class="navegacion" href="index.html#servicios-ofrecidos">Servicios ofrecidos</a>
-            <a class="navegacion" href="index.html#opiniones">Opiniones</a>            
-        </div>
+            <a class="navegacion" href="index.html#opiniones">Opiniones</a> 
+            <a class="navegacion" href="index.html#enlaces-de-contacto">Contacto</a>  
+        </div>             
     </header>
     <main>
         <h1>CyberPulse Labs</h1>
@@ -32,21 +36,21 @@
             <h2 id="servicios-ofrecidos">Servicios ofrecidos</h2>
 
             <div class="contenedor-tarjetas">
-                <div class="tarjeta1">
+                <div class="tarjeta1" id="tarjeta1" onmouseenter="anadirnuevo(event)" onmouseleave="anadirnuevo(event)">
                     <h3 class="titulo-tarjeta">Monitoreo</h3>
                     <p>Seguimiento en tiempo real de solicitudes entrantes a tu sistema.</p>
                 </div> 
-                <div class="tarjeta2">
+                <div class="tarjeta2" onmouseenter="anadirnuevo(event)" onmouseleave="anadirnuevo(event)">
                     <h3 class="titulo-tarjeta">Análisis</h3>
                     <p>Posibilidad de indagar dentro de cada petición para observar sus datos más relevantes.</p>
                 </div>
-                <div class="tarjeta3">
+                <div class="tarjeta3" onmouseenter="anadirnuevo(event)" onmouseleave="anadirnuevo(event)">
                     <h3 class="titulo-tarjeta">Respuesta</h3>
                     <p>El sistema sugerirá las mejores acciones a emplear en el escenario. 
                         Puede configurar si desea que la IA actúe inmediatamente o con supervisión de un administrador.</p>
                 </div>
                 <!-- Cuarta tarjeta que abarca todo el ancho del grid (3 columnas)-->
-                 <div class="tarjeta4">
+                 <div class="tarjeta4" onmouseenter="anadirnuevo(event)" onmouseleave="anadirnuevo(event)">
                     <h3 class="titulo-tarjeta">Tarjeta 4</h3>
                     <p>Esta es una tarjeta con un texto supercalifragilisticoespialodoso para que ocupe mucho ancho y tenga
                         sentido que ocupe las tres columnas que ya ocupan las otras tres tarjetas ya introducidas.
@@ -79,7 +83,7 @@
         </section>
     </main>
     <footer>
-        <h2>Enlaces de contacto</h2>
+        <h2 id="enlaces-de-contacto">Enlaces de contacto</h2>
         <p id="contacto"><u>Correo electrónico:</u> <a href="mailto:rrhh@cyberpulse-labs.com">
             rrhh@cyberpulse-labs.com
         </a></p>
