@@ -39,26 +39,15 @@ function cambiarTema(event) {
     if (event.type == "click") {
         if (tema == 0) { // Claro -> Oscuro
             event.target.setAttribute("src", "images/night.png");
-            var tarjetas = Array.from(document.getElementsByClassName("tarjeta"));
-            tarjetas.forEach(e => {
+            var elementosACambiar = Array.from(document.getElementsByClassName("tema"));
+            elementosACambiar.forEach(e => {
                 e.classList.add("dark");
             });
-            var numpasos = Array.from(document.getElementsByClassName("num-paso"));
-            numpasos.forEach(e => {
-                e.classList.add("dark");
-            });
-            document.body.className = "dark";
         } else { // Oscuro -> Claro
-            event.target.setAttribute("src", "images/day.png");
-            var tarjetas = Array.from(document.getElementsByClassName("tarjeta"));
-            tarjetas.forEach(e => {
+            var elementosACambiar = Array.from(document.getElementsByClassName("tema"));
+            elementosACambiar.forEach(e => {
                 e.classList.remove("dark");
             });
-            var numpasos = Array.from(document.getElementsByClassName("num-paso"));
-            numpasos.forEach(e => {
-                e.classList.remove("dark");
-            });
-            document.body.className = "";
         }
         tema = !tema; // Cambiamos de tema
     }

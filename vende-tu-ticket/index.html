@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="styles.css">
         <script src="script.js" defer></script>
     </head>
-    <body>
+    <body class="tema">
         <header>
             <div id="logo-web">
                 <img src="images/ticket.png" width="48px" height="48px">
@@ -29,16 +29,16 @@
                 <p>¡Bienvenido a VendeTuTicket.es!</p>
             </section>
             <section class="quienes-somos">
-                <h2 id="quienes-somos">¿Qué es VendeTuTicket.es?</h2>
-                <p>
+                <h2 class="tema" id="quienes-somos">¿Qué es VendeTuTicket.es?</h2>
+                <p class="tema">
                     Somos una empresa dedicada a la venta de entradas, fundada por auténticos amantes de los eventos culturales. 
                     En <strong>VendeTuTicket.es</strong> creemos que ninguna entrada debe desperdiciarse, por eso ofrecemos una plataforma segura, rápida y fácil de usar para vender y comprar entradas de todo tipo.
                 </p>
-                <p>
+                <p class="tema">
                     Admitimos entradas para una amplia variedad de eventos: conciertos, festivales, sesiones de teatro, partidos de fútbol, conferencias, monólogos, estrenos de cine, y mucho más. 
                     Si no puedes asistir, o estás buscando ese pase agotado que tanto deseas, estás en el lugar correcto.
                 </p>
-                <p>
+                <p class="tema">
                     Únete a nuestra comunidad y forma parte de una red donde las experiencias siguen vivas, incluso si tú no puedes estar. 
                     Porque cada entrada cuenta, y cada evento merece su público.
                 </p>
@@ -46,57 +46,57 @@
             </section>
             <section>
                 <!-- Sección de pasos para vender tu entrada -->
-                <h2 id="proceso-venta">¿Cómo es el proceso de venta de entradas?</h2>
+                <h2 class="tema" id="proceso-venta">¿Cómo es el proceso de venta de entradas?</h2>
                 <div class="contenedor-pasos">
-                    <div class="tarjeta" id="tarjeta1" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso">Paso 1</p>
+                    <div class="tarjeta tema" id="tarjeta1" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso tema">Paso 1</p>
                         <img src="images/login.png">
                     </div>
-                    <div class="tarjeta" id="tarjeta2" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso">Paso 2</p>
+                    <div class="tarjeta tema" id="tarjeta2" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso tema">Paso 2</p>
                         <img src="images/form.png">
                     </div>
-                    <div class="tarjeta" id="tarjeta3" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso">Paso 3</p>
+                    <div class="tarjeta tema" id="tarjeta3" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso tema">Paso 3</p>
                         <img src="images/admin-validation.png">
                     </div>
-                    <div class="tarjeta" id="tarjeta4" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso">Paso 4</p>
+                    <div class="tarjeta tema" id="tarjeta4" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso tema">Paso 4</p>
                         <img src="images/money.png">
                     </div>
                 </div>
-                <p id="info-paso">Sitúa el ratón sobre un paso para conocer sus detalles.</p>
+                <p id="info-paso" class="tema">Sitúa el ratón sobre un paso para conocer sus detalles.</p>
             </section>
             <section>
-                <h2 id="confianza">Seguridad y confianza</h2>
+                <h2 class="tema" id="confianza">Seguridad y confianza</h2>
                 <div class="contenedor-seguridad">
-                    <div class="tarjeta-sc" id="sc-tarj-1">
+                    <div class="tarjeta-sc tema" id="sc-tarj-1">
                         <div class="sc-tarj-titulo">
-                            <h3>Acuerdos con organizadoras.</h3>
+                            <h3 class="tema">Acuerdos con organizadoras.</h3>
                             <img src="images/agreetment.png">
                         </div>
-                        <p>Disponemos de acuerdos con muchas empresas organizadoras, para asegurarnos de que tu entrada no ha sido revendida varias veces.</p>
+                        <p class="tema">Disponemos de acuerdos con muchas empresas organizadoras, para asegurarnos de que tu entrada no ha sido revendida varias veces.</p>
                         </div>
-                    <div class="tarjeta-sc" id="sc-tarj-2">
+                    <div class="tarjeta-sc tema" id="sc-tarj-2">
                         <div class="sc-tarj-titulo">
-                            <h3>Generación de nuevas entradas</h3>
+                            <h3 class="tema">Generación de nuevas entradas</h3>
                             <img src="images/qr.png">
                         </div>
-                        <p>Cuando tengas comprador para la entrada que deseas vender, se generará un nuevo código (y su correspondiente QR) y se anulará la original.</p>
+                        <p class="tema">Cuando tengas comprador para la entrada que deseas vender, se generará un nuevo código (y su correspondiente QR) y se anulará la original.</p>
                     </div>
-                    <div class="tarjeta-sc" id="sc-tarj-3">
+                    <div class="tarjeta-sc tema" id="sc-tarj-3">
                         <div class="sc-tarj-titulo">
-                            <h3>Venta segura</h3>
+                            <h3 class="tema">Venta segura</h3>
                             <img src="images/payment.png">
                         </div>
-                        <p>Disponemos de numerosos métodos de pago para comprar la entrada: PayPal, VISA, MasterCard, Bizum, transferencia...</p>
+                        <p class="tema">Disponemos de numerosos métodos de pago para comprar la entrada: PayPal, VISA, MasterCard, Bizum, transferencia...</p>
                     </div>
-                    <div class="tarjeta-sc" id="sc-tarj-4">
+                    <div class="tarjeta-sc tema" id="sc-tarj-4">
                         <div class="sc-tarj-titulo">
-                            <h3>¡No a la especulación de precios!</h3>
+                            <h3 class="tema">¡No a la especulación de precios!</h3>
                             <img src="images/speculation.png">
                         </div>
-                        <p>Sabemos que existe gente que sólo compra entradas para revenderlas más caras. Si quieren venderlas en nuestra plataforma, deberán establecer un precio razonable.</p>
+                        <p class="tema">Sabemos que existe gente que sólo compra entradas para revenderlas más caras. Si quieren venderlas en nuestra plataforma, deberán establecer un precio razonable.</p>
                     </div>
                 </div>
             </section>
