@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VendeTuTicket</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div id="logo-web">
+                <img src="images/ticket.png" width="48px" height="48px">
+                <h1>VendeTuTicket.es</h1>
+            </div>
+            <img id="selector-nav" src="images/nav-open.png" width="26px" height="26px" onclick="mostrarNav(event)">
+            <nav>
+                <a class="en-nav" href="index.html#quienes-somos">Quiénes somos</a>
+                <a class="en-nav" href="index.html#proceso-venta">Proceso de venta</a>
+                <a class="en-nav" href="index.html#enlaces-de-contacto">Contacto</a>
+                <a class="en-nav" href="index.html#confianza">Confianza y seguridad</a>
+                <img class="en-nav" src="images/day.png" width="32px" height="32px" onclick="cambiarTema(event)">
+            </nav>
+        </header>
+        <main>
+            <section class="banner-principal">
+                <p>¿No puedes ir a un evento y no sabes qué hacer con la entrada?</p>
+                <p>¿Buscas una web para comprar entradas de un concierto <i>Sold Out</i>?</p>
+                <p>¡Bienvenido a VendeTuTicket.es!</p>
+            </section>
+            <section class="quienes-somos">
+                <h2 id="quienes-somos">¿Qué es VendeTuTicket.es?</h2>
+                <p>
+                    Somos una empresa dedicada a la venta de entradas, fundada por auténticos amantes de los eventos culturales. 
+                    En <strong>VendeTuTicket.es</strong> creemos que ninguna entrada debe desperdiciarse, por eso ofrecemos una plataforma segura, rápida y fácil de usar para vender y comprar entradas de todo tipo.
+                </p>
+                <p>
+                    Admitimos entradas para una amplia variedad de eventos: conciertos, festivales, sesiones de teatro, partidos de fútbol, conferencias, monólogos, estrenos de cine, y mucho más. 
+                    Si no puedes asistir, o estás buscando ese pase agotado que tanto deseas, estás en el lugar correcto.
+                </p>
+                <p>
+                    Únete a nuestra comunidad y forma parte de una red donde las experiencias siguen vivas, incluso si tú no puedes estar. 
+                    Porque cada entrada cuenta, y cada evento merece su público.
+                </p>
+
+            </section>
+            <section>
+                <!-- Sección de pasos para vender tu entrada -->
+                <h2 id="proceso-venta">¿Cómo es el proceso de venta de entradas?</h2>
+                <div class="contenedor-pasos">
+                    <div class="tarjeta" id="tarjeta1" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso">Paso 1</p>
+                        <img src="images/login.png">
+                    </div>
+                    <div class="tarjeta" id="tarjeta2" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso">Paso 2</p>
+                        <img src="images/form.png">
+                    </div>
+                    <div class="tarjeta" id="tarjeta3" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso">Paso 3</p>
+                        <img src="images/admin-validation.png">
+                    </div>
+                    <div class="tarjeta" id="tarjeta4" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <p class="num-paso">Paso 4</p>
+                        <img src="images/money.png">
+                    </div>
+                </div>
+                <p id="info-paso">Sitúa el ratón sobre un paso para conocer sus detalles.</p>
+            </section>
+            <section>
+                <h2 id="confianza">Seguridad y confianza</h2>
+                <div class="contenedor-seguridad">
+                    <div class="tarjeta-sc" id="sc-tarj-1">
+                        <div class="sc-tarj-titulo">
+                            <h3>Acuerdos con organizadoras.</h3>
+                            <img src="images/agreetment.png">
+                        </div>
+                        <p>Disponemos de acuerdos con muchas empresas organizadoras, para asegurarnos de que tu entrada no ha sido revendida varias veces.</p>
+                        </div>
+                    <div class="tarjeta-sc" id="sc-tarj-2">
+                        <div class="sc-tarj-titulo">
+                            <h3>Generación de nuevas entradas</h3>
+                            <img src="images/qr.png">
+                        </div>
+                        <p>Cuando tengas comprador para la entrada que deseas vender, se generará un nuevo código (y su correspondiente QR) y se anulará la original.</p>
+                    </div>
+                    <div class="tarjeta-sc" id="sc-tarj-3">
+                        <div class="sc-tarj-titulo">
+                            <h3>Venta segura</h3>
+                            <img src="images/payment.png">
+                        </div>
+                        <p>Disponemos de numerosos métodos de pago para comprar la entrada: PayPal, VISA, MasterCard, Bizum, transferencia...</p>
+                    </div>
+                    <div class="tarjeta-sc" id="sc-tarj-4">
+                        <div class="sc-tarj-titulo">
+                            <h3>¡No a la especulación de precios!</h3>
+                            <img src="images/speculation.png">
+                        </div>
+                        <p>Sabemos que existe gente que sólo compra entradas para revenderlas más caras. Si quieren venderlas en nuestra plataforma, deberán establecer un precio razonable.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <h2 id="enlaces-de-contacto">Enlaces de contacto</h2>
+            <p class="contacto"><u>Correo electrónico:</u> <a href="mailto:contacto@vendetuticket.es">contacto@vendetuticket.es</a></p>
+            <p class="contacto"><u>Teléfono:</u> 123456789</p>
+            <div class="redes-sociales">
+                <a href="https://www.linkedin.com"><img src="images/linkedin.png"></a>
+                <a href="https://www.facebook.com"><img src="images/facebook.png"></a>
+            </div>        
+        </footer>
+    </body>
+</html>

@@ -54,7 +54,7 @@ function mostrarNav(event) {
         if (nav == 0) { // invisibles -> visibles
             event.target.setAttribute("src", "images/nav-close.png");
             opciones.forEach( n => {
-                n.classList.add("nav-visible");
+                n.classList.add("nav-visible"); // Add a la lista y no asignación a className porque ya tiene la clase navegacion
             })
         } else { // invisibles -> visibles
             event.target.setAttribute("src", "images/nav.png");

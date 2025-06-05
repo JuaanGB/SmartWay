@@ -181,12 +181,16 @@ footer {
         gap: 10px;
         flex-direction: column;
     }
+    /* Sólo mostramos el selector del nav en dispositivos pequeños */
     #selector-nav {
         display: block;
     }
+    /* El nav por defecto está oculto */
     .navegacion {
         display: none;
     }
+    /* Cuando hagamos clic en el botón se muestra */
+    /* Este estilo de dos clases desaparece al hacerse pequeña la ventana */
     .nav-visible.navegacion {
         display: block;
     }
