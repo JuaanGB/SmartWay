@@ -1,3 +1,4 @@
+/*
 :root {
     --nav-color: #050505;
     --title-color: #1b9aaa;
@@ -5,16 +6,16 @@
     --third-color: #f5f1e3;
     --background: #ffffff;
 
-    --light-card: #f0ebe1;         /* Interior tarjeta (más oscuro que el fondo) */
-    --light-card-border: #ccc7b5;  /* Borde suave (más oscuro que el fondo de tarjeta) */
-    --light-text: #333333;         /* Texto en tarjetas */
+    --light-card: #f0ebe1;       
+    --light-card-border: #ccc7b5;  
+    --light-text: #333333;        
 
     --dark-title-color: #116772;;
-    --dark-background: #121212;         /* Fondo general oscuro */
-    --dark-card: #414040;               /* Interior de la tarjeta */
-    --dark-card-border: var(--second-color);        /* Borde de la tarjeta */
-    --dark-text: #e0e0e0;               /* Texto principal */
-    --dark-title: #64b5f6;              /* Títulos / detalles destacados */
+    --dark-background: #121212;       
+    --dark-card: #414040;               
+    --dark-card-border: var(--second-color);    
+    --dark-text: #e0e0e0;              
+    --dark-title: #64b5f6;             
 }
 
 
@@ -23,8 +24,7 @@ header {
     display: flex;
     align-items: center;
     padding: 0px 10px;
-    position: sticky;
-    top: 0;
+    position: fixed;
     width: 100vw;
     box-shadow: 0px 3px rgba(0, 0, 0, 0.2);
 }
@@ -144,7 +144,7 @@ p.tema.dark {
 .tarjeta {
     display: flex;
     flex-direction: column-reverse;
-    margin: 10px 40px 0; /* Arriba | Horizontal | Abajo */
+    margin: 10px 40px 0;
     padding: 10px 40px;
     background-color: var(--light-card);
     align-content: center;
@@ -184,7 +184,6 @@ p.tema.dark {
     font-size: 20px;
 }
 
-/**/
 .contenedor-seguridad {
     display: grid;
     gap: 20px;
@@ -304,7 +303,6 @@ p.contacto {
 }
 
 
-/* Media queries: Al final porque CSS funciona en cascada */
 @media only screen and (max-width: 800px) {
     header {
         gap: 10px;
@@ -314,16 +312,12 @@ p.contacto {
         flex-direction: column;
         margin-left: 0;
     }
-    /* Sólo mostramos el selector del nav en dispositivos pequeños */
     #selector-nav {
         display: block;
     }
-    /* El nav por defecto está oculto */
     .en-nav {
         display: none;
     }
-    /* Cuando hagamos clic en el botón se muestra */
-    /* Este estilo de dos clases desaparece al hacerse pequeña la ventana */
     .en-nav.nav-visible {
         display: block;
         align-items: center;
@@ -338,3 +332,6 @@ p.contacto {
         flex-direction: column;
     }    
 }
+
+*/
+
