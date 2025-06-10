@@ -2,13 +2,7 @@
 var tema = 0;
 
 // 0: ocultos en modo pequeño, 1: visibles en modo pequeño
-var navVisible = 0;
-
-document.documentElement.classList.toggle(
-    "dark",
-    localStorage.theme === "dark" || 
-    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
-);
+var nav = 0;
 
 function mostrarInformacionPaso(event) {
     const tarjeta = event.target;
@@ -43,34 +37,37 @@ function mostrarInformacionPaso(event) {
 // deseamos que cambien. Habrá que definir estilos para ese elemento y esa clase concreta en el CSS.
 function cambiarTema(event) {
     if (event.type == "click") {
-        const html = document.documentElement;
-
         if (tema == 0) { // Claro -> Oscuro
             event.target.setAttribute("src", "images/night.png");
-            localStorage.theme = "dark";
-            html.classList.add("dark");
+            var elementosACambiar = Array.from(document.getElementsByClassName("tema"));
+            elementosACambiar.forEach(e => {
+                e.classList.add("dark");
+            });
         } else { // Oscuro -> Claro
             event.target.setAttribute("src", "images/day.png");
-            localStorage.theme = "light";
-            html.classList.remove("dark");
+            var elementosACambiar = Array.from(document.getElementsByClassName("tema"));
+            elementosACambiar.forEach(e => {
+                e.classList.remove("dark");
+            });
         }
-        tema = !tema;
+        tema = !tema; // Cambiamos de tema
     }
 }
 
-
 function mostrarNav(event) {
-    const menu = document.getElementById("menu");
-    const btn = document.getElementById("menu-btn");
-
-    if (!navVisible) {
-        menu.classList.remove("hidden");
-        menu.classList.add("flex");
-        btn.src = "images/nav-close.png";
-    } else {
-        menu.classList.add("hidden");
-        menu.classList.remove("flex");
-        btn.src = "images/nav-open.png";    
+    if (event.type == "click") {
+        var opciones = Array.from(document.getElementsByTagName("nav")[0].children);
+        if (nav == 0) { // invisibles -> visibles
+            event.target.setAttribute("src", "images/nav-close.png");
+            opciones.forEach( n => {
+                n.classList.add("nav-visible"); // Add a la lista y no asignación a className porque ya tiene la clase navegacion
+            })
+        } else { // invisibles -> visibles
+            event.target.setAttribute("src", "images/nav-open.png");
+            opciones.forEach( n => {
+                n.classList.remove("nav-visible");
+            })
+        }
+        nav = !nav;
     }
-    navVisible = !navVisible;
 }
