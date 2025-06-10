@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="mytheme">
     <head>
         <title>VendeTuTicket</title>
         <link rel="icon" type="image/x-icon" href="images/ticket.png">
@@ -7,24 +7,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css">
         <script src="script.js" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
     <body class="tema">
         <header>
-            <div id="logo-web">
-                <img src="images/ticket.png" width="48px" height="48px">
-                <h1>VendeTuTicket.es</h1>
-            </div>
-            <img id="selector-nav" src="images/nav-open.png" width="26px" height="26px" onclick="mostrarNav(event)">
-            <nav>
-                <a class="en-nav" href="index.html#quienes-somos">Quiénes somos</a>
-                <a class="en-nav" href="index.html#proceso-venta">Proceso de venta</a>
-                <a class="en-nav" href="index.html#enlaces-de-contacto">Contacto</a>
-                <a class="en-nav" href="index.html#confianza">Confianza y seguridad</a>
-                <img class="en-nav" src="images/day.png" width="32px" height="32px" onclick="cambiarTema(event)">
+            <nav class="navbar bg-base-200 shadow-md">
+                <!-- Hamburguesa solo si pantalla pequeña y el logo -->
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        </div>
+                        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 w-60 roundex-box z-1">
+                            <li><a href="#quienes-somos">Quiénes somos</a></li>
+                            <li><a href="index.html#proceso-venta">Proceso de venta</a></li>
+                            <li><a href="index.html#enlaces-de-contacto">Contacto</a></li>
+                            <li><a href="index.html#confianza">Confianza y seguridad</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl">VendeTuTicket.es</a>
+                </div>
+                <!-- Vínculos a apartados si pantalla grande -->
+                <div class="navbar-center hidden lg:flex">
+                    <a class="btn btn-ghost" href="#quienes-somos">Quiénes somos</a>
+                    <a class="btn btn-ghost" href="#proceso-venta">Proceso de venta</a>
+                    <a class="btn btn-ghost" href="#enlaces-de-contacto">Contacto</a>
+                    <a class="btn btn-ghost" href="#confianza">Confianza y seguridad</a>
+                </div>
+                <!-- Lupa de búsqueda y perfil -->
+                <div class="navbar-end">
+                    <button class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
+                    </button>
+                </div>
             </nav>
         </header>
         <main>
-            <section class="banner-principal">
+            <section class="banner-principal glass">
                 <p>¿No puedes ir a un evento y no sabes qué hacer con la entrada?</p>
                 <p>¿Buscas una web para comprar entradas de un concierto <i>Sold Out</i>?</p>
                 <p>¡Bienvenido a VendeTuTicket.es!</p>
@@ -43,7 +63,7 @@
                     Únete a nuestra comunidad y forma parte de una red donde las experiencias siguen vivas, incluso si tú no puedes estar. 
                     Porque cada entrada cuenta, y cada evento merece su público.
                 </p>
-
+                <button class="btn">¡Comienza a vender!</button>
             </section>
             <section>
                 <!-- Sección de pasos para vender tu entrada -->
