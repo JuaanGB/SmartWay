@@ -38,17 +38,9 @@ function mostrarInformacionPaso(event) {
 function cambiarTema(event) {
     if (event.type == "click") {
         if (tema == 0) { // Claro -> Oscuro
-            event.target.setAttribute("src", "images/night.png");
-            var elementosACambiar = Array.from(document.getElementsByClassName("tema"));
-            elementosACambiar.forEach(e => {
-                e.classList.add("dark");
-            });
+            document.documentElement.dataset.theme = "night";
         } else { // Oscuro -> Claro
-            event.target.setAttribute("src", "images/day.png");
-            var elementosACambiar = Array.from(document.getElementsByClassName("tema"));
-            elementosACambiar.forEach(e => {
-                e.classList.remove("dark");
-            });
+            document.documentElement.dataset.theme = "nord";
         }
         tema = !tema; // Cambiamos de tema
     }

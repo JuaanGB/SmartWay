@@ -1,135 +1,234 @@
 <!DOCTYPE html>
-<html data-theme="mytheme">
+<html data-theme="nord">
     <head>
         <title>VendeTuTicket</title>
         <link rel="icon" type="image/x-icon" href="images/ticket.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="theme.css">
         <script src="script.js" defer></script>
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^3/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/daisyui@^2/dist/full.js"></script>
+        -->
     </head>
     <body class="tema">
         <header>
-            <nav class="navbar bg-base-200 shadow-md">
+            <nav class="navbar bg-base-300 shadow-md">
                 <!-- Hamburguesa solo si pantalla pequeña y el logo -->
                 <div class="navbar-start">
+                    <!-- Ver drawers en DaisyUI -->
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                         </div>
                         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 w-60 roundex-box z-1">
                             <li><a href="#quienes-somos">Quiénes somos</a></li>
-                            <li><a href="index.html#proceso-venta">Proceso de venta</a></li>
-                            <li><a href="index.html#enlaces-de-contacto">Contacto</a></li>
-                            <li><a href="index.html#confianza">Confianza y seguridad</a></li>
+                            <li><a href="#proceso-venta">Proceso de venta</a></li>
+                            <li><a href="#confianza">Confianza y seguridad</a></li>
+                            <li><a href="#faq">Preguntas frecuentes</a></li>
+                            <li><a href="#enlaces-de-contacto">Contacto</a></li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost text-xl">VendeTuTicket.es</a>
+                    
+                    <a class="btn btn-ghost text-xl" href="index.html">VendeTuTicket.es</a>
                 </div>
                 <!-- Vínculos a apartados si pantalla grande -->
                 <div class="navbar-center hidden lg:flex">
                     <a class="btn btn-ghost" href="#quienes-somos">Quiénes somos</a>
                     <a class="btn btn-ghost" href="#proceso-venta">Proceso de venta</a>
-                    <a class="btn btn-ghost" href="#enlaces-de-contacto">Contacto</a>
                     <a class="btn btn-ghost" href="#confianza">Confianza y seguridad</a>
+                    <a class="btn btn-ghost" href="#faq">Preguntas frecuentes</a>
+                    <a class="btn btn-ghost" href="#enlaces-de-contacto">Contacto</a>
                 </div>
                 <!-- Lupa de búsqueda y perfil -->
-                <div class="navbar-end">
-                    <button class="btn btn-ghost btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /> </svg>
-                    </button>
+                <div class="navbar-end gap-2">
+                    <label class="swap swap-rotate">
+                        <input id="modo" type="checkbox" onclick="cambiarTema(event)" />
+                        <!-- sun icon -->
+                        <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path  d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" /></svg>
+                        <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
+                    </label>
+
+                    <div class="dropdown dropdown-end">
+                        <label tabindex="0" class="btn btn-ghost btn-circle avatar avatar-placeholder bg-neutral text-neutral-content">
+                                <span class="text-lg">JA</span>
+                        </label>
+                        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a class="justify-between">Perfil<span class="badge">New</span></a></li>
+                            <li><a href="#">Subir entrada</a></li>
+                            <li><a href="#">Configuración</a></li>
+                            <li><a href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>
         <main>
-            <section class="banner-principal glass">
+            <section class="banner-principal flex flex-wrap flex-col items-center justify-center">
                 <p>¿No puedes ir a un evento y no sabes qué hacer con la entrada?</p>
                 <p>¿Buscas una web para comprar entradas de un concierto <i>Sold Out</i>?</p>
                 <p>¡Bienvenido a VendeTuTicket.es!</p>
+                <div class="join mt-20 w-1/2 justify-center"> 
+                    <label class="input join-item">
+                        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+                        <input type="search" required placeholder="Nombre de artista o lugar">
+                    </label>
+                    <button class="btn btn-neutral join-item">GO!</button>
+                </div>
             </section>
-            <section class="quienes-somos">
-                <h2 class="tema" id="quienes-somos">¿Qué es VendeTuTicket.es?</h2>
-                <p class="tema">
-                    Somos una empresa dedicada a la venta de entradas, fundada por auténticos amantes de los eventos culturales. 
-                    En <strong>VendeTuTicket.es</strong> creemos que ninguna entrada debe desperdiciarse, por eso ofrecemos una plataforma segura, rápida y fácil de usar para vender y comprar entradas de todo tipo.
-                </p>
-                <p class="tema">
-                    Admitimos entradas para una amplia variedad de eventos: conciertos, festivales, sesiones de teatro, partidos de fútbol, conferencias, monólogos, estrenos de cine, y mucho más. 
-                    Si no puedes asistir, o estás buscando ese pase agotado que tanto deseas, estás en el lugar correcto.
-                </p>
-                <p class="tema">
-                    Únete a nuestra comunidad y forma parte de una red donde las experiencias siguen vivas, incluso si tú no puedes estar. 
-                    Porque cada entrada cuenta, y cada evento merece su público.
-                </p>
-                <button class="btn">¡Comienza a vender!</button>
+            <section id="quienes-somos">
+                <h2 class="divider divider-primary text-3xl my-10" id="quienes-somos">¿Qué es VendeTuTicket.es?</h2>
+                <div class="flex flex-col gap-2 w-3/4 mx-auto">
+                    <p class="tema">
+                        Somos una empresa dedicada a la <strong>venta de entradas</strong>, fundada por auténticos amantes de los eventos culturales. 
+                        En <strong>VendeTuTicket.es</strong> creemos que ninguna entrada debe desperdiciarse, por eso ofrecemos una plataforma segura, rápida y fácil de usar para <strong>vender y comprar entradas</strong> de todo tipo.
+                    </p>
+                    <p class="tema">
+                        Admitimos entradas para una amplia variedad de eventos: conciertos, festivales, sesiones de teatro, partidos de fútbol, conferencias, monólogos, estrenos de cine, y mucho más. 
+                        Si no puedes asistir, o estás buscando ese pase agotado que tanto deseas, estás en el lugar correcto.
+                    </p>
+                    <p class="tema">
+                        Únete a nuestra comunidad y forma parte de una red donde las experiencias siguen vivas, incluso si tú no puedes estar. 
+                        Porque cada entrada cuenta, y cada evento merece su público.
+                    </p>
+                </div>
+                
             </section>
             <section>
                 <!-- Sección de pasos para vender tu entrada -->
-                <h2 class="tema" id="proceso-venta">¿Cómo es el proceso de venta de entradas?</h2>
-                <div class="contenedor-pasos">
-                    <div class="tarjeta tema" id="tarjeta1" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso tema">Paso 1</p>
-                        <img src="images/login.png">
+                <h2 class="divider divider-primary text-3xl my-10" id="proceso-venta">¿Cómo es el proceso de venta de entradas?</h2>
+                <div class="contenedor-pasos flex flex-row flex-wrap gap-4 m-10 content-center justify-center items-center">
+                    <div id="tarjeta1" class="card bg-base-200 shadow-sm" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <figure class="p-10">
+                            <img src="images/login.png" alt="Login">
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title text-2xl">Paso 1</h2>
+                        </div>
                     </div>
-                    <div class="tarjeta tema" id="tarjeta2" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso tema">Paso 2</p>
-                        <img src="images/form.png">
+                    <div id="tarjeta2" class="card bg-base-200 shadow-sm" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <figure class="p-10">
+                            <img src="images/form.png" alt="Login">
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title text-2xl">Paso 2</h2>
+                        </div>
                     </div>
-                    <div class="tarjeta tema" id="tarjeta3" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso tema">Paso 3</p>
-                        <img src="images/admin-validation.png">
+                    <div id="tarjeta3" class="card bg-base-200 shadow-sm" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <figure class="p-10">
+                            <img src="images/admin-validation.png" alt="Login">
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title text-2xl">Paso 3</h2>
+                        </div>
                     </div>
-                    <div class="tarjeta tema" id="tarjeta4" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
-                        <p class="num-paso tema">Paso 4</p>
-                        <img src="images/money.png">
+                    <div id="tarjeta4" class="card bg-base-200 shadow-sm" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
+                        <figure class="p-10">
+                            <img src="images/money.png" alt="Login">
+                        </figure>
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title text-2xl">Paso 4</h2>
+                        </div>
                     </div>
                 </div>
-                <p id="info-paso" class="tema">Sitúa el ratón sobre un paso para conocer sus detalles.</p>
+                <p id="info-paso" class="text-center w-full">Sitúa el ratón sobre un paso para conocer sus detalles.</p>
             </section>
             <section>
-                <h2 class="tema" id="confianza">Seguridad y confianza</h2>
-                <div class="contenedor-seguridad">
-                    <div class="tarjeta-sc tema" id="sc-tarj-1">
-                        <div class="sc-tarj-titulo">
-                            <h3 class="tema">Acuerdos con organizadoras.</h3>
-                            <img src="images/agreetment.png">
+                <h2 class="divider divider-primary text-3xl my-10" id="confianza">Seguridad y confianza</h2>
+                <div class="grid grid-cols-3 grid-rows-2 gap-6 m-6 max-lg:flex max-lg:flex-col">
+                    <div class="col-start-1 col-end-1 card card-lg card-border bg-base-200 hover:bg-base-300 transition duration-500 shadow-sm">
+                        <div class="card-body">
+                            <div class="flex flex-row justify-between">
+                                <h3 class="card-title">Acuerdos con organizadoras</h3>
+                                <img class="inline" src="images/agreetment.png" alt="Acuerdo" width="64px" height="64px">
+                            </div>
+                            <p>Disponemos de acuerdos con muchas empresas organizadoras, para asegurarnos de que tu entrada no ha sido revendida varias veces.</p>
                         </div>
-                        <p class="tema">Disponemos de acuerdos con muchas empresas organizadoras, para asegurarnos de que tu entrada no ha sido revendida varias veces.</p>
-                        </div>
-                    <div class="tarjeta-sc tema" id="sc-tarj-2">
-                        <div class="sc-tarj-titulo">
-                            <h3 class="tema">Generación de nuevas entradas</h3>
-                            <img src="images/qr.png">
-                        </div>
-                        <p class="tema">Cuando tengas comprador para la entrada que deseas vender, se generará un nuevo código (y su correspondiente QR) y se anulará la original.</p>
                     </div>
-                    <div class="tarjeta-sc tema" id="sc-tarj-3">
-                        <div class="sc-tarj-titulo">
-                            <h3 class="tema">Venta segura</h3>
-                            <img src="images/payment.png">
+                    <div class="col-start-2 col-end-2 card card-lg card-border bg-base-200 hover:bg-base-300 transition duration-500 shadow-sm">
+                        <div class="card-body">
+                            <div class="flex flex-row justify-between">
+                                <h3 class="card-title">Generación de nuevas entradas</h3>
+                                <img class="inline" src="images/qr.png" alt="Código QR" width="64px" height="64px">
+                            </div>
+                            <p>Cuando tengas comprador para la entrada que deseas vender, se generará un nuevo código (y su correspondiente QR) y se anulará la original.</p>
                         </div>
-                        <p class="tema">Disponemos de numerosos métodos de pago para comprar la entrada: PayPal, VISA, MasterCard, Bizum, transferencia...</p>
                     </div>
-                    <div class="tarjeta-sc tema" id="sc-tarj-4">
-                        <div class="sc-tarj-titulo">
-                            <h3 class="tema">¡No a la especulación de precios!</h3>
-                            <img src="images/speculation.png">
+                    <div class="col-start-3 col-end-3 card card-lg card-border bg-base-200 hover:bg-base-300 transition duration-500 shadow-sm">
+                        <div class="card-body">
+                            <div class="flex flex-row justify-between">
+                                <h3 class="card-title">Venta segura</h3>
+                                <img class="inline" src="images/payment.png" alt="Pago" width="64px" height="64px">
+                            </div>
+                            <p>Disponemos de numerosos métodos de pago para comprar la entrada: PayPal, VISA, MasterCard, Bizum, transferencia...</p>
                         </div>
-                        <p class="tema">Sabemos que existe gente que sólo compra entradas para revenderlas más caras. Si quieren venderlas en nuestra plataforma, deberán establecer un precio razonable.</p>
+                    </div>
+                    <div class="row-start-2 row-end-2 col-span-full card card-lg card-border bg-base-200 hover:bg-base-300 transition duration-500 shadow-sm">
+                        <div class="card-body">
+                            <div class="flex flex-row justify-between">
+                                <h3 class="card-title">Acuerdos con organizadoras</h3>
+                                <img class="inline" src="images/speculation.png" alt="Especulación" width="64px" height="64px">
+                            </div>
+                            <p>Sabemos que existe gente que sólo compra entradas para revenderlas más caras. Si quieren venderlas en nuestra plataforma, deberán establecer un precio razonable o similar al precio de compra original de la entrada.</p>
+                        </div>
                     </div>
                 </div>
             </section>
+            <section>
+                <!-- Preguntas frecuentes -->
+                <h2 class="divider divider-primary text-3xl my-10" id="faq">Preguntas más frecuentes</h2>
+                <div class="w-3/4 mb-4 mx-auto">
+                    <div class="collapse collapse-arrow bg-base-100 border border-base-300 m-1 shadow-sm bg-secondary text-secondary-content">
+                        <input type="radio" name="my-accordion-2" checked="checked" />
+                        <div class="collapse-title font-semibold">¿Qué necesito para vender una entrada?</div>
+                        <div class="collapse-content text-sm">Necesitarás rellenar el formulario propuesto, adjuntar la entrada en formato PDF. En el formulario, indicarás datos como nombre del artista, lugar del evento o precio de la entrada.</div>
+                    </div>
+                    <div class="collapse collapse-arrow bg-base-100 border border-base-300 m-1 shadow-sm bg-secondary text-secondary-content">
+                        <input type="radio" name="my-accordion-2" checked="checked" />
+                        <div class="collapse-title font-semibold">¿Qué precio puedo ponerle a la entrada?</div>
+                        <div class="collapse-content text-sm">Puedes vender una entrada a cualquier valor inferior y hasta un 10% más de su precio original. Si no lo cumples, un administrador rechazará tu propuesta de venta y la entrada no estará a la venta en nuestra plataforma.</div>
+                    </div>
+                    <div class="collapse collapse-arrow bg-base-100 border border-base-300 m-1 shadow-sm bg-secondary text-secondary-content">
+                        <input type="radio" name="my-accordion-2" checked="checked" />
+                        <div class="collapse-title font-semibold">¿Qué pasa si mi entrada no se vende?</div>
+                        <div class="collapse-content text-sm">Se eliminará de VendeTuTicket.es y no recibirás dinero.</div>
+                    </div>
+                    <div class="collapse collapse-arrow bg-base-100 border border-base-300 m-1 shadow-sm bg-secondary text-secondary-content">
+                        <input type="radio" name="my-accordion-2" checked="checked" />
+                        <div class="collapse-title font-semibold">¿Cuándo recibiré mi dinero?</div>
+                        <div class="collapse-content text-sm">Recibirás el dinero de la entrada en tu cuenta de PayPal o bancaria el próximo día hábil al evento.</div>
+                    </div>
+                </div>
+               
+            </section>
         </main>
-        <footer>
-            <h2 id="enlaces-de-contacto">Enlaces de contacto</h2>
-            <p class="contacto"><u>Correo electrónico:</u> <a href="mailto:contacto@vendetuticket.es">contacto@vendetuticket.es</a></p>
-            <p class="contacto"><u>Teléfono:</u> 123456789</p>
-            <div class="redes-sociales">
-                <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin.png"></a>
-                <a href="https://www.facebook.com"><img src="images/facebook.png"></a>
-            </div>        
+        <footer class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+            <aside>
+                <img src="images/ticket.png" width="50" height="50">
+                <p>
+                    VendeTuTicket-Iberia SL.
+                    <br />
+                    Reventa segura de entradas desde 2025.
+                </p>
+            </aside>
+            <nav>
+                <h6 class="footer-title">Redes sociales</h6>
+                <div class="flex flex-row flex-wrap gap-2 p-2">
+                    <a href="https://www.linkedin.com" target="_blank" rel="noreferer"><img class="sm-icon" src="images/linkedin.png"></a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener"><img class="sm-icon" src="images/facebook.png"></a>
+                </div>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Otros métodos de contacto</h6>
+                <div class="flex flex-col flex-wrap gap-2 p-2">
+                    <p><a href="mailto:contacto@vendetuticket.es">contacto@vendetuticket.es</a></p>
+                    <p>Tlf: 123456789</p>
+                </div>
+            </nav>
         </footer>
     </body>
 </html>
