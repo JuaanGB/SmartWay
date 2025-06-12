@@ -11,9 +11,9 @@
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
-        <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^3/dist/tailwind.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/daisyui@^2/dist/full.js"></script>
-        -->
+        <style type="text/tailwindcss">      
+            @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+        </style>
     </head>
     <body class="tema">
         <header>
@@ -107,7 +107,7 @@
                             <img src="images/login.png" alt="Login">
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title text-2xl">Paso 1</h2>
+                            <h3 class="card-title text-2xl">Paso 1</h3>
                         </div>
                     </div>
                     <div id="tarjeta2" class="card bg-base-200 shadow-sm" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
@@ -115,7 +115,7 @@
                             <img src="images/form.png" alt="Login">
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title text-2xl">Paso 2</h2>
+                            <h3 class="card-title text-2xl">Paso 2</h3>
                         </div>
                     </div>
                     <div id="tarjeta3" class="card bg-base-200 shadow-sm" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
@@ -123,7 +123,7 @@
                             <img src="images/admin-validation.png" alt="Login">
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title text-2xl">Paso 3</h2>
+                            <h3 class="card-title text-2xl">Paso 3</h3>
                         </div>
                     </div>
                     <div id="tarjeta4" class="card bg-base-200 shadow-sm" onmouseenter="mostrarInformacionPaso(event)" onmouseleave="mostrarInformacionPaso(event)">
@@ -131,7 +131,7 @@
                             <img src="images/money.png" alt="Login">
                         </figure>
                         <div class="card-body items-center text-center">
-                            <h2 class="card-title text-2xl">Paso 4</h2>
+                            <h3 class="card-title text-2xl">Paso 4</h3>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
             </section>
             <section>
                 <h2 class="divider divider-primary text-3xl my-10" id="confianza">Seguridad y confianza</h2>
-                <div class="grid grid-cols-3 grid-rows-2 gap-6 m-6 max-lg:flex max-lg:flex-col">
+                <div class="grid grid-cols-3 grid-rows-2 gap-6 m-6 max-md:flex max-lg:flex-col">
                     <div class="col-start-1 col-end-1 card card-lg card-border bg-base-200 hover:bg-base-300 transition duration-500 shadow-sm">
                         <div class="card-body">
                             <div class="flex flex-row justify-between">
@@ -206,7 +206,7 @@
                
             </section>
         </main>
-        <footer class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+        <footer id="enlaces-de-contacto" class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
             <aside>
                 <img src="images/ticket.png" width="50" height="50">
                 <p>

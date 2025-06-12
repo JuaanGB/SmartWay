@@ -14,6 +14,8 @@ if (localStorage.theme == undefined) {
         console.log("Preferencia de navegador: dark");
         initializeModoOscuro();
         localStorage.theme = "dark";
+    } else {
+        localStorage.theme = "light";
     }
 } else {
     console.log(`Establezco preferencia de localStorage: ${localStorage.theme}`);

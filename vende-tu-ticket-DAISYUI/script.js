@@ -1,8 +1,44 @@
-// 0: claro, 1: oscuro
-var tema = 0;
+/* --------------- CAMBIO DE TEMA ---------------- */
 
-// 0: ocultos en modo pequeño, 1: visibles en modo pequeño
-var nav = 0;
+// Al cargar la página:
+// 1. Preferencia de localStorage.
+// 2. Si no la hay, la preferencia del navegador
+if (localStorage.theme === undefined) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.theme = "dark";
+        document.getElementById("modo").checked = false;
+    } else {
+        document.documentElement.setAttribute("data-theme", "nord");
+        localStorage.theme = "nord";
+        document.getElementById("modo").checked = true;
+    }
+} else if (localStorage.theme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    document.getElementById("modo").checked = false;
+} else {
+    document.documentElement.setAttribute("data-theme", "nord");
+    document.getElementById("modo").checked = true;
+}
+
+// El botón
+function cambiarTema(event) {
+    if (event.type == "click") {
+        const html = document.documentElement;
+        const val = html.getAttribute("data-theme");
+        if (val === "dark") { // Oscuro -> Claro
+            console.log("Cambiando a modo claro.")
+            event.target.checked = true;
+            html.setAttribute("data-theme", "nord");
+            localStorage.theme = "nord";
+        } else { // Claro -> Oscuro
+            console.log("Cambiando a modo oscuro.")
+            event.target.checked = false;
+            html.setAttribute("data-theme", "dark");
+            localStorage.theme = "dark";
+        }
+    }
+}
 
 function mostrarInformacionPaso(event) {
     const tarjeta = event.target;
@@ -30,36 +66,5 @@ function mostrarInformacionPaso(event) {
     } 
     if (event.type == "mouseleave") {
         info.textContent = "Sitúa el ratón sobre un paso para conocer sus detalles.";
-    }
-}
-
-// Para personalizar estilos en función de un evento, podemos aplicar/quitar clases a los elementos que
-// deseamos que cambien. Habrá que definir estilos para ese elemento y esa clase concreta en el CSS.
-function cambiarTema(event) {
-    if (event.type == "click") {
-        if (tema == 0) { // Claro -> Oscuro
-            document.documentElement.dataset.theme = "night";
-        } else { // Oscuro -> Claro
-            document.documentElement.dataset.theme = "nord";
-        }
-        tema = !tema; // Cambiamos de tema
-    }
-}
-
-function mostrarNav(event) {
-    if (event.type == "click") {
-        var opciones = Array.from(document.getElementsByTagName("nav")[0].children);
-        if (nav == 0) { // invisibles -> visibles
-            event.target.setAttribute("src", "images/nav-close.png");
-            opciones.forEach( n => {
-                n.classList.add("nav-visible"); // Add a la lista y no asignación a className porque ya tiene la clase navegacion
-            })
-        } else { // invisibles -> visibles
-            event.target.setAttribute("src", "images/nav-open.png");
-            opciones.forEach( n => {
-                n.classList.remove("nav-visible");
-            })
-        }
-        nav = !nav;
     }
 }
