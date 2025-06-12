@@ -1,14 +1,27 @@
-// 0: claro, 1: oscuro
-var tema = 0;
-
 // 0: ocultos en modo pequeño, 1: visibles en modo pequeño
 var navVisible = 0;
 
-document.documentElement.classList.toggle(
-    "dark",
-    localStorage.theme === "dark" || 
-    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
-);
+function initializeModoOscuro() {
+    const btnTema = document.getElementById("btn-tema");
+    btnTema.setAttribute("src", "images/night.png");
+    document.documentElement.setAttribute("data-theme", "dark");
+}
+
+// Inicialización de sol o luna dependiendo del modo preferido del navegador
+if (localStorage.theme == undefined) {
+    console.log("Establezco preferencia de navegador.");
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        console.log("Preferencia de navegador: dark");
+        initializeModoOscuro();
+        localStorage.theme = "dark";
+    }
+} else {
+    console.log(`Establezco preferencia de localStorage: ${localStorage.theme}`);
+    if (localStorage.theme == "dark") {
+        initializeModoOscuro();
+    }
+}
+// Si es modo día no cambiamos nada porque eso ya lo configuraba el html
 
 function mostrarInformacionPaso(event) {
     const tarjeta = event.target;
@@ -44,17 +57,18 @@ function mostrarInformacionPaso(event) {
 function cambiarTema(event) {
     if (event.type == "click") {
         const html = document.documentElement;
-
-        if (tema == 0) { // Claro -> Oscuro
-            event.target.setAttribute("src", "images/night.png");
-            localStorage.theme = "dark";
-            html.classList.add("dark");
-        } else { // Oscuro -> Claro
+        const val = html.getAttribute("data-theme");
+        if (val === "dark") { // Oscuro -> Claro
+            console.log("Cambiando a modo claro.")
             event.target.setAttribute("src", "images/day.png");
+            html.removeAttribute("data-theme");
             localStorage.theme = "light";
-            html.classList.remove("dark");
+        } else { // Claro -> Oscuro
+            console.log("Cambiando a modo oscuro.")
+            event.target.setAttribute("src", "images/night.png");
+            html.setAttribute("data-theme", "dark");
+            localStorage.theme = "dark";
         }
-        tema = !tema;
     }
 }
 
