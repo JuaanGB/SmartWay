@@ -6,11 +6,11 @@
 if (localStorage.theme === undefined) {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.theme = "dark";
+        // localStorage.theme = "dark"; // Comentada para sólo guardar la preferencia del usuario cuando haga clic
         modo.checked = false; // Previamente como document.getElementByID("modo")
     } else {
         document.documentElement.setAttribute("data-theme", "nord");
-        localStorage.theme = "nord";
+        // localStorage.theme = "nord";
         modo.checked = true;
     }
 } else if (localStorage.theme === "dark") {

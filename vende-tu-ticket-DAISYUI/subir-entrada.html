@@ -52,11 +52,12 @@
             <form class="bg-base-200 p-6 xl:w-3/4 mx-auto rounded-box shadow-md max-md:flex max-md:items-center max-md:flex-col grid grid-cols-3 grid-rows-[auto,auto,auto,auto,auto,auto,auto,2fr] gap-4">
 
                 <!-- Foto opcional: columna 1, ocupa 4 filas -->
-                <div class="p-2 w-full row-start-1 row-span-6 bg-base-100 hover:bg-base-300 rounded-box shadow-sm flex flex-col items-center justify-center gap-2 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 20 20"><!-- Icon from HeroIcons by Refactoring UI Inc - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE --><path fill="currentColor" fill-rule="evenodd" d="M13.75 7h-3V3.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0L6.2 4.74a.75.75 0 0 0 1.1 1.02l1.95-2.1V7h-3A2.25 2.25 0 0 0 4 9.25v7.5A2.25 2.25 0 0 0 6.25 19h7.5A2.25 2.25 0 0 0 16 16.75v-7.5A2.25 2.25 0 0 0 13.75 7m-3 0h-1.5v5.25a.75.75 0 0 0 1.5 0z" clip-rule="evenodd"/></svg>
-                    <p class="text-lg text-center px-4">Foto opcional del artista/evento</p>
-                </div>
-
+                <label for="foto-evento" class="p-2 w-full row-start-1 row-span-6 bg-base-100 hover:bg-base-300 rounded-box shadow-sm flex flex-col items-center justify-center gap-2 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M13.75 7h-3V3.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0L6.2 4.74a.75.75 0 0 0 1.1 1.02l1.95-2.1V7h-3A2.25 2.25 0 0 0 4 9.25v7.5A2.25 2.25 0 0 0 6.25 19h7.5A2.25 2.25 0 0 0 16 16.75v-7.5A2.25 2.25 0 0 0 13.75 7m-3 0h-1.5v5.25a.75.75 0 0 0 1.5 0z" clip-rule="evenodd"/></svg>
+                        <p class="text-lg text-center px-4">Foto opcional del artista/evento (.jpg, .png)</p>
+                        <input name="foto-evento" id="foto-evento" class="hidden w-100 h-100" type="file" accept="image/png image/jpeg">
+                </label>
+                
                 <!-- Fila 1: Título información general + tooltip -->
                 <div class="col-span-2 flex items-center justify-between z-10">
                     <h2 class="text-xl">Información general del evento</h2>
@@ -105,10 +106,11 @@
                 <input name="precio" type="number" step="any" class="row-start-8 col-span-full input validator w-1/2" placeholder="Precio entrada" min="1">
 
                 <!-- Fila 9: Subir pdf de entrada -->
-                <div class="p-2 row-start-9 col-span-full row-span-2 bg-base-100 hover:bg-base-300 rounded-box shadow-sm w-full flex flex-col items-center justify-center gap-2 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><!-- Icon from HeroIcons by Refactoring UI Inc - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE --><g fill="currentColor"><path d="M9.97.97a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1-1.06 1.06l-1.72-1.72v3.44h-1.5V3.31L8.03 5.03a.75.75 0 0 1-1.06-1.06zm-.22 5.78v6a.75.75 0 0 0 1.5 0v-6h3a3 3 0 0 1 3 3v7.5a3 3 0 0 1-3 3h-7.5a3 3 0 0 1-3-3v-7.5a3 3 0 0 1 3-3z"/><path d="M7.151 21.75a3 3 0 0 0 2.599 1.5h7.5a3 3 0 0 0 3-3v-7.5a3 3 0 0 0-1.5-2.599v7.099a4.5 4.5 0 0 1-4.5 4.5z"/></g></svg>
-                    <p class="text-md text-center px-4">Adjunta la entrada (.pdf)</p>
-                </div>
+                <label for="entrada-pdf" class="p-2 row-start-9 col-span-full row-span-2 bg-base-100 hover:bg-base-300 rounded-box shadow-sm w-full flex flex-col items-center justify-center gap-2 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M13.75 7h-3V3.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0L6.2 4.74a.75.75 0 0 0 1.1 1.02l1.95-2.1V7h-3A2.25 2.25 0 0 0 4 9.25v7.5A2.25 2.25 0 0 0 6.25 19h7.5A2.25 2.25 0 0 0 16 16.75v-7.5A2.25 2.25 0 0 0 13.75 7m-3 0h-1.5v5.25a.75.75 0 0 0 1.5 0z" clip-rule="evenodd"/></svg>
+                        <p class="text-lg text-center px-4">Adjunta la entrada (.pdf)</p>
+                        <input name="entrada-pdf" id="entrada-pdf" class="hidden w-100 h-100" type="file" accept=".pdf">
+                </label>
 
                 <!-- Fila 10: Botón de publicar entrada -->
                 <button class="btn btn-primary col-span-full w-full" onclick="event.preventDefault(); document.getElementById('notiForm').showModal()" type="submit">Publicar entrada</button>
