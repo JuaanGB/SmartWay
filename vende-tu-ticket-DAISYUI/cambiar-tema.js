@@ -7,18 +7,18 @@ if (localStorage.theme === undefined) {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.documentElement.setAttribute("data-theme", "dark");
         localStorage.theme = "dark";
-        document.getElementById("modo").checked = false;
+        modo.checked = false; // Previamente como document.getElementByID("modo")
     } else {
         document.documentElement.setAttribute("data-theme", "nord");
         localStorage.theme = "nord";
-        document.getElementById("modo").checked = true;
+        modo.checked = true;
     }
 } else if (localStorage.theme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
-    document.getElementById("modo").checked = false;
+    modo.checked = false;
 } else {
     document.documentElement.setAttribute("data-theme", "nord");
-    document.getElementById("modo").checked = true;
+    modo.checked = true;
 }
 
 // El botón

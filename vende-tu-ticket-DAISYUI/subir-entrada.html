@@ -14,9 +14,12 @@
         </style>
     </head>
     <body>
-        <header class=" sticky top-0 z-50">
+        <header class="sticky top-0 z-50">
             <nav class="navbar bg-base-300 shadow-md">
                 <div class="navbar-start">
+                    <a class="btn btn-ghost btn-circle" href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><!-- Icon from HeroIcons by Refactoring UI Inc - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE --><path fill="currentColor" fill-rule="evenodd" d="M14 8a.75.75 0 0 1-.75.75H4.56l1.22 1.22a.75.75 0 1 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1 0-1.06l2.5-2.5a.75.75 0 0 1 1.06 1.06L4.56 7.25h8.69A.75.75 0 0 1 14 8" clip-rule="evenodd"/></svg>
+                    </a>
                     <a class="btn btn-ghost text-xl" href="index.html">VendeTuTicket.es</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
@@ -46,35 +49,35 @@
             </nav>
         </header>
         <main class="p-6 mx-auto bg-primary">
-            <form class="bg-base-200 p-6 w-1/2 mx-auto rounded-box shadow-md grid grid-cols-3 grid-rows-[auto,auto,auto,auto,auto,auto,auto,2fr] gap-4">
+            <form class="bg-base-200 p-6 xl:w-3/4 mx-auto rounded-box shadow-md max-md:flex max-md:items-center max-md:flex-col grid grid-cols-3 grid-rows-[auto,auto,auto,auto,auto,auto,auto,2fr] gap-4">
 
                 <!-- Foto opcional: columna 1, ocupa 4 filas -->
-                <div class="row-start-1 row-span-6 bg-base-100 hover:bg-base-300 rounded-box shadow-sm w-auto flex flex-col items-center justify-center gap-2 cursor-pointer">
-                    <img src="images/upload-file.png" width="96px" height="96px">
+                <div class="p-2 w-full row-start-1 row-span-6 bg-base-100 hover:bg-base-300 rounded-box shadow-sm flex flex-col items-center justify-center gap-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 20 20"><!-- Icon from HeroIcons by Refactoring UI Inc - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE --><path fill="currentColor" fill-rule="evenodd" d="M13.75 7h-3V3.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0L6.2 4.74a.75.75 0 0 0 1.1 1.02l1.95-2.1V7h-3A2.25 2.25 0 0 0 4 9.25v7.5A2.25 2.25 0 0 0 6.25 19h7.5A2.25 2.25 0 0 0 16 16.75v-7.5A2.25 2.25 0 0 0 13.75 7m-3 0h-1.5v5.25a.75.75 0 0 0 1.5 0z" clip-rule="evenodd"/></svg>
                     <p class="text-lg text-center px-4">Foto opcional del artista/evento</p>
                 </div>
 
                 <!-- Fila 1: Título información general + tooltip -->
-                <div class="col-span-2 flex items-center justify-between">
+                <div class="col-span-2 flex items-center justify-between z-10">
                     <h2 class="text-xl">Información general del evento</h2>
                     <div class="tooltip z-50" data-tip="Información mostrada en la búsqueda de un evento.">
                         <button class="btn btn-circle p-0">
-                            <img src="images/boton-de-informacion.png" alt="Info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from HeroIcons by Refactoring UI Inc - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z"/></svg>
                         </button>
                     </div>
                 </div>
 
                 <!-- Fila 2: Nombre del evento (col 2), Localización (col 3) -->
                 <label class="input col-start-2">
-                    <input type="text" class="grow" placeholder="Nombre del evento" />
+                    <input name="evento" type="text" class="grow" placeholder="Nombre del evento" />
                 </label>
                 <label class="input col-start-3">
-                    <input type="text" class="grow" placeholder="Localización" />
+                    <input name="localizacion" type="text" class="grow" placeholder="Localización"/>
                 </label>
 
                 <!-- Fila 3: Fecha (col 2), Espacio vacío (col 3) -->
                 <label class="input col-start-2">
-                    <input type="date" class="grow" />
+                    <input name="fecha" type="date" class="grow" />
                 </label>
 
                 <p class="col-span-2">
@@ -82,16 +85,16 @@
                 </p>
 
                 <!-- Fila 4: Información complementaria + tooltip -->
-                <div class="col-start-2 col-span-2 flex items-center justify-between">
+                <div class="col-start-2 col-span-2 flex items-center justify-between z-10">
                     <h2 class="text-xl">Información complementaria del evento</h2>
                     <div class="tooltip z-50" data-tip="Información mostrada en los detalles de un evento.">
                         <button class="btn btn-circle p-0">
-                            <img src="images/boton-de-informacion.png" alt="Info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from HeroIcons by Refactoring UI Inc - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0m-9-3.75h.008v.008H12z"/></svg>
                         </button>
                     </div>
                 </div>
 
-                <textarea class="textarea col-start-2 col-span-2 w-auto min-h-10" placeholder="¿Por qué vendes la entrada?"></textarea>
+                <textarea class="textarea col-start-2 col-span-2 w-full min-h-10" placeholder="¿Por qué vendes la entrada?"></textarea>
 
                 <!-- Fila 7: Título de entradas y precio de venta -->
                 <div class="col-start-1 col-span-3 row-start-7">
@@ -99,19 +102,29 @@
                 </div>
 
                 <!-- Fila 8: Input de precio de la entrada -->
-                <input type="number" step="any" class="row-start-8 col-span-full input validator w-1/2" placeholder="Precio entrada" min="1">
+                <input name="precio" type="number" step="any" class="row-start-8 col-span-full input validator w-1/2" placeholder="Precio entrada" min="1">
 
                 <!-- Fila 9: Subir pdf de entrada -->
-                <div class="row-start-9 col-span-full row-span-2 bg-base-100 hover:bg-base-300 p-3 rounded-box shadow-sm w-auto flex flex-col items-center justify-center gap-2 cursor-pointer">
-                    <img src="images/upload-file.png" width="64px" height="64px">
+                <div class="p-2 row-start-9 col-span-full row-span-2 bg-base-100 hover:bg-base-300 rounded-box shadow-sm w-full flex flex-col items-center justify-center gap-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><!-- Icon from HeroIcons by Refactoring UI Inc - https://github.com/tailwindlabs/heroicons/blob/master/LICENSE --><g fill="currentColor"><path d="M9.97.97a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1-1.06 1.06l-1.72-1.72v3.44h-1.5V3.31L8.03 5.03a.75.75 0 0 1-1.06-1.06zm-.22 5.78v6a.75.75 0 0 0 1.5 0v-6h3a3 3 0 0 1 3 3v7.5a3 3 0 0 1-3 3h-7.5a3 3 0 0 1-3-3v-7.5a3 3 0 0 1 3-3z"/><path d="M7.151 21.75a3 3 0 0 0 2.599 1.5h7.5a3 3 0 0 0 3-3v-7.5a3 3 0 0 0-1.5-2.599v7.099a4.5 4.5 0 0 1-4.5 4.5z"/></g></svg>
                     <p class="text-md text-center px-4">Adjunta la entrada (.pdf)</p>
                 </div>
 
                 <!-- Fila 10: Botón de publicar entrada -->
-                <button class="btn btn-primary col-span-full">Publicar entrada</button>
-
+                <button class="btn btn-primary col-span-full w-full" onclick="event.preventDefault(); document.getElementById('notiForm').showModal()" type="submit">Publicar entrada</button>
+                <dialog id="notiForm" class="modal">
+                    <div class="modal-box">
+                        <form method="dialog">
+                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">x</button>
+                        </form>
+                        <h3 class="text-lg font-bold">Venta de entrada</h3>
+                        <p class="py-4">¡Solicitud de venta de entrada recibida! Un administrador verificará que todos los datos introducidos son correctos. Recibirás un correo.</p>
+                    </div>
+                </dialog>
             </form>
-</main>
+            <span id="date-of-birth">Birthday</span>
+
+        </main>
 
     </body>
 </html>

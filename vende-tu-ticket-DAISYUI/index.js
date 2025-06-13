@@ -2,7 +2,7 @@ function mostrarInformacionPaso(event) {
     const tarjeta = event.target;
     const id = tarjeta.id; // Acabará en 1, 2, 3 o 4
     const num = id.slice(-1);
-    const info = document.getElementById("info-paso");
+    const info = document.getElementById("info-paso"); // Podría simplemente utilizar infoPaso
 
     if (event.type == "mouseenter") {
         switch (num) {
@@ -26,3 +26,4 @@ function mostrarInformacionPaso(event) {
         info.textContent = "Sitúa el ratón sobre un paso para conocer sus detalles.";
     }
 }
+
