@@ -33,7 +33,7 @@ h2 {
 
 footer p {
     text-justify: center;
-    z-index: 9999;
+    z-index: 20;
 }
 
 @media not all and (min-width: 768px) {
