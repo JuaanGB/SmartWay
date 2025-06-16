@@ -5,10 +5,6 @@ h2 {
 
 .banner-principal {
     background-image: url("images/banner-principal.webp");
-    background-size: cover;
-    background-position: center;
-    min-height: 500px;
-    align-content: center;
 }
 
 .banner-principal p {
