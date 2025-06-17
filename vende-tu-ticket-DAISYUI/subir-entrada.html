@@ -5,6 +5,7 @@
         <link rel="icon" type="image/x-icon" href="images/ticket.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="subir-entrada.css">
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
@@ -15,7 +16,7 @@
         </style>
     </head>
     <body>
-        <header class="sticky top-0 z-50">
+        <header class="sticky top-0 z-40">
             <nav class="navbar bg-base-300 shadow-md">
                 <div class="navbar-start">
                     <a class="btn btn-ghost btn-circle" href="index.html">
@@ -53,10 +54,11 @@
             <form class="bg-base-200 p-6 xl:w-3/4 mx-auto rounded-box shadow-md max-md:flex max-md:items-center max-md:flex-col grid grid-cols-3 grid-rows-[auto,auto,auto,auto,auto,auto,auto,2fr] gap-4">
 
                 <!-- Foto opcional: columna 1, ocupa 4 filas -->
-                <label for="foto-evento" class="p-2 w-full row-start-1 row-span-6 bg-base-100 hover:bg-base-300 rounded-box shadow-sm flex flex-col items-center justify-center gap-2 cursor-pointer">
+                <label id="foto-evento-img" for="foto-evento-input" class="foto-evento relative p-2 w-full row-start-1 row-span-6 bg-base-100 hover:bg-base-300 rounded-box shadow-sm flex flex-col items-center justify-center gap-2 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M13.75 7h-3V3.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0L6.2 4.74a.75.75 0 0 0 1.1 1.02l1.95-2.1V7h-3A2.25 2.25 0 0 0 4 9.25v7.5A2.25 2.25 0 0 0 6.25 19h7.5A2.25 2.25 0 0 0 16 16.75v-7.5A2.25 2.25 0 0 0 13.75 7m-3 0h-1.5v5.25a.75.75 0 0 0 1.5 0z" clip-rule="evenodd"/></svg>
                         <p class="text-lg text-center px-4">Foto opcional del artista/evento (.jpg, .png)</p>
-                        <input name="foto-evento" id="foto-evento" class="hidden w-100 h-100" type="file" accept="image/png image/jpeg">
+                        <input name="foto-evento" id="foto-evento-input" class="hidden w-100 h-100" type="file" accept="image/png image/jpeg">
+                        <button id="boton-foto-evento" class="hidden btn btn-neutral btn-circle absolute top-5 right-5">X</button>
                 </label>
                 
                 <!-- Fila 1: Título información general + tooltip -->
@@ -78,7 +80,7 @@
                 </label>
 
                 <!-- Fila 3: Fecha (col 2), Espacio vacío (col 3) -->
-                <label class="input col-start-2 max-md:w-3/4 max-sm:w-full">
+                <label class="input col-start-2">
                     <input name="fecha" type="date" class="grow" />
                 </label>
 
@@ -125,7 +127,6 @@
                     </div>
                 </dialog>
             </form>
-            <span id="date-of-birth">Birthday</span>
 
         </main>
 

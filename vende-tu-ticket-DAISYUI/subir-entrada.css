@@ -1,0 +1,9 @@
+/* Si hay foto no quiero que se vean los elementos hijos (svg, label, etc) */
+.hay-foto * {
+    display: none;
+}
+
+/* Si hay foto, sólo muestro el botón cuando se hace hover */
+.hay-foto:hover #boton-foto-evento {
+    display: block;
+}

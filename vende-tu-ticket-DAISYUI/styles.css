@@ -32,6 +32,7 @@ footer p {
     z-index: 20;
 }
 
+
 @media not all and (min-width: 768px) {
     h2 {
         text-wrap: wrap;
